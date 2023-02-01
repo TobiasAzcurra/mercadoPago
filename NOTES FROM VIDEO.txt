@@ -1,0 +1,50 @@
+https://www.youtube.com/watch?v=w1VBrIuSw2o&t=306
+
+
+
+
+	CREAR USUARIOS DE PRUEBA
+
+curl -X POST \
+-H "Content-Type: application/json" \
+-H 'Authorization: Bearer APP_USR-3481603756794079-011017-b29fdd608592fb2a32a2bd9ad17d7238-834537839' \
+"https://api.mercadopago.com/users/test_user" \
+-d '{"site_id":"MLA"}'
+
+
+
+
+	USUARIOS DE PRUEBA
+
+
+	1. Usuario vendedor
+
+$ c60url -X POST \
+> -H "Content-Type: application/json" \
+> -H 'Authorization: Bearer APP_USR-3481603756794079-011017-b29fdd608592fb2a32a2bd9ad17d7238-834537839' \
+> "https://api.mercadopago.com/users/test_user" \
+> -d '{"site_id":"MLA"}'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   159    0   142  100    17    134     16  0:00:01  0:00:01 --:--:--   150{"id":1284189910,"email":"test_user_1284189910@testuser.com","nickname":"TEST_USER_1284189910","site_status":"active","password":"8EmqmAQdJT"}
+
+
+	2. Usuario de compra
+
+$ curl -X POST \
+> -H "Content-Type: application/json" \
+> -H 'Authorization: Bearer APP_USR-3481603756794079-011017-b29fdd608592fb2a32a2bd9ad17d7238-834537839' \
+> "https://api.mercadopago.com/users/test_user" \
+> -d '{"site_id":"MLA"}'
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   159    0   142  100    17    119     14  0:00:01  0:00:01 --:--:--   134{"id":1284197311,"email":"test_user_1284197311@testuser.com","nickname":"TEST_USER_1284197311","site_status":"active","password":"MujTQzWO9J"}
+
+
+
+
+	http://localhost:3000/payment
+
+Lo que nos importa es el init_point que es el link de compra
+
+
